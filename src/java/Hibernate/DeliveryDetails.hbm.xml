@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 11, 2020 7:58:16 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.DeliveryDetails" table="delivery_details" catalog="cake_store">
+        <id name="iddeliveryDetails" type="java.lang.Integer">
+            <column name="iddelivery_details" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="invoiceItem" class="Hibernate.InvoiceItem" fetch="select">
+            <column name="idinvoice_item" not-null="true" />
+        </many-to-one>
+        <property name="feedback" type="string">
+            <column name="feedback" length="45" />
+        </property>
+        <property name="revName" type="string">
+            <column name="rev_name" length="45" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45" />
+        </property>
+        <property name="date" type="date">
+            <column name="date" length="10" />
+        </property>
+        <property name="complain" type="string">
+            <column name="complain" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

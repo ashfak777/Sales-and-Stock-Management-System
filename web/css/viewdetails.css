@@ -1,0 +1,27 @@
+.image{
+    width: 120px;
+    height: 150px;
+}
+.btn1{
+   // margin-top: -10px;
+    margin-top: 5px;
+    color: black;
+    
+}
+.txt{
+    width: 90px;
+    height: 20px;
+    margin-top: 10px;
+}
+.view{
+    font-family: Candara;
+    font-size: 15px;
+    border-style: solid;
+    width: 250px;
+/*    min-width: 230px;
+    max-width: 230px;*/
+    padding: 10px;
+    border-radius: 10px;
+    display: table-cell;
+}
+

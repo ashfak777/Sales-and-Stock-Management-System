@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 11, 2020 7:58:16 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.UserRegistration" table="user_registration" catalog="cake_store">
+        <id name="uid" type="java.lang.Integer">
+            <column name="uid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="userType" class="Hibernate.UserType" fetch="select">
+            <column name="iduser_type" not-null="true" />
+        </many-to-one>
+        <property name="fname" type="string">
+            <column name="fname" length="45" />
+        </property>
+        <property name="lname" type="string">
+            <column name="lname" length="45" />
+        </property>
+        <property name="mobile" type="string">
+            <column name="mobile" length="45" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="45" />
+        </property>
+        <property name="registerDate" type="string">
+            <column name="register_date" length="45" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="45" />
+        </property>
+        <property name="imgUrl" type="string">
+            <column name="img_url" length="450" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45" />
+        </property>
+        <property name="rate" type="string">
+            <column name="rate" length="45" />
+        </property>
+        <set name="carts" table="cart" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="uid" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.Cart" />
+        </set>
+        <set name="chatsForFromUser" table="chat" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="from_user" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.Chat" />
+        </set>
+        <set name="chatsForToUser" table="chat" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="to_user" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.Chat" />
+        </set>
+        <set name="cakes" table="cake" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="sid" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.Cake" />
+        </set>
+        <set name="cakeUploads" table="cake_upload" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="uid" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.CakeUpload" />
+        </set>
+        <set name="userLogins" table="user_login" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_registration_uid" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.UserLogin" />
+        </set>
+        <set name="costDetails" table="cost_detail" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="sid" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.CostDetail" />
+        </set>
+        <set name="userAddresses" table="user_address" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="uid" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.UserAddress" />
+        </set>
+        <set name="invoices" table="invoice" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="uid" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.Invoice" />
+        </set>
+    </class>
+</hibernate-mapping>

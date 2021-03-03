@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 11, 2020 7:58:16 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.Interfaces" table="interfaces" catalog="cake_store">
+        <id name="idinterfaces" type="int">
+            <column name="idinterfaces" />
+            <generator class="assigned" />
+        </id>
+        <property name="url" type="string">
+            <column name="url" length="45" />
+        </property>
+        <property name="interfaceName" type="string">
+            <column name="interface_name" length="45" />
+        </property>
+        <set name="privilageses" table="privilages" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="interfaces_idinterfaces" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.Privilages" />
+        </set>
+    </class>
+</hibernate-mapping>

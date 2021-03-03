@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/cake_store?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">toor</property>
+    <mapping resource="Hibernate/CartItem.hbm.xml"/>
+    <mapping resource="Hibernate/DeliveryDetails.hbm.xml"/>
+    <mapping resource="Hibernate/Cake.hbm.xml"/>
+    <mapping resource="Hibernate/UserRegistration.hbm.xml"/>
+    <mapping resource="Hibernate/Chat.hbm.xml"/>
+    <mapping resource="Hibernate/Invoice.hbm.xml"/>
+    <mapping resource="Hibernate/CategoryHasCake.hbm.xml"/>
+    <mapping resource="Hibernate/Seller.hbm.xml"/>
+    <mapping resource="Hibernate/Category.hbm.xml"/>
+    <mapping resource="Hibernate/Interfaces.hbm.xml"/>
+    <mapping resource="Hibernate/InvoiceItem.hbm.xml"/>
+    <mapping resource="Hibernate/Cart.hbm.xml"/>
+    <mapping resource="Hibernate/CostDetail.hbm.xml"/>
+    <mapping resource="Hibernate/Privilages.hbm.xml"/>
+    <mapping resource="Hibernate/UserLogin.hbm.xml"/>
+    <mapping resource="Hibernate/Messages.hbm.xml"/>
+    <mapping resource="Hibernate/UserType.hbm.xml"/>
+    <mapping resource="Hibernate/UserAddress.hbm.xml"/>
+    <mapping resource="Hibernate/Cakestore.hbm.xml"/>
+    <mapping resource="Hibernate/CakeUpload.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

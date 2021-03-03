@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 11, 2020 7:58:16 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.UserAddress" table="user_address" catalog="cake_store">
+        <id name="idclientAddress" type="int">
+            <column name="idclient_address" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="userRegistration" class="Hibernate.UserRegistration" fetch="select">
+            <column name="uid" not-null="true" />
+        </many-to-one>
+        <property name="country" type="string">
+            <column name="country" length="45" />
+        </property>
+        <property name="province" type="string">
+            <column name="province" length="45" />
+        </property>
+        <property name="postCode" type="string">
+            <column name="post_code" length="45" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="45" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="45" />
+        </property>
+        <property name="lane" type="string">
+            <column name="lane" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

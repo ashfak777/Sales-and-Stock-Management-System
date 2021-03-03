@@ -1,0 +1,14 @@
+
+.btn{
+    box-shadow: 2px 2px 2px #999999;
+    width: 100%;
+}
+
+.btn:hover{
+    box-shadow: 2px 2px 2px #999999;
+    border-radius: 0px 0px 0px;
+}
+#login-right-div{
+    margin-top: 10%;
+    margin-bottom: 1%;
+}

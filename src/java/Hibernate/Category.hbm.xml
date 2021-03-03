@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 11, 2020 7:58:16 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.Category" table="category" catalog="cake_store">
+        <id name="idcategory" type="int">
+            <column name="idcategory" />
+            <generator class="assigned" />
+        </id>
+        <property name="categoryName" type="string">
+            <column name="category_name" length="45" />
+        </property>
+        <set name="categoryHasCakes" table="category_has_cake" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idcategory" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.CategoryHasCake" />
+        </set>
+    </class>
+</hibernate-mapping>

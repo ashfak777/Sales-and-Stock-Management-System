@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 11, 2020 7:58:16 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.Cake" table="cake" catalog="cake_store">
+        <id name="idcake" type="java.lang.Integer">
+            <column name="idcake" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="seller" class="Hibernate.Seller" fetch="select">
+            <column name="seller_idseller" not-null="true" />
+        </many-to-one>
+        <many-to-one name="userRegistration" class="Hibernate.UserRegistration" fetch="select">
+            <column name="sid" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="45" />
+        </property>
+        <property name="type" type="int">
+            <column name="type" not-null="true" />
+        </property>
+        <property name="size" type="string">
+            <column name="size" length="45" />
+        </property>
+        <property name="weight" type="string">
+            <column name="weight" length="45" />
+        </property>
+        <property name="imgurl1" type="string">
+            <column name="imgurl1" length="250" />
+        </property>
+        <property name="imgurl2" type="string">
+            <column name="imgurl2" length="250" />
+        </property>
+        <property name="imgurl3" type="string">
+            <column name="imgurl3" length="250" />
+        </property>
+        <property name="colour" type="string">
+            <column name="colour" length="45" />
+        </property>
+        <set name="categoryHasCakes" table="category_has_cake" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idcake" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.CategoryHasCake" />
+        </set>
+        <set name="cakestores" table="cakestore" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idcake" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.Cakestore" />
+        </set>
+    </class>
+</hibernate-mapping>

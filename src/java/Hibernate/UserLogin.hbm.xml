@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 11, 2020 7:58:16 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.UserLogin" table="user_login" catalog="cake_store">
+        <id name="iduserLogin" type="java.lang.Integer">
+            <column name="iduser_login" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="userRegistration" class="Hibernate.UserRegistration" fetch="select">
+            <column name="user_registration_uid" not-null="true" />
+        </many-to-one>
+        <property name="username" type="string">
+            <column name="username" length="45" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 11, 2020 7:58:16 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.CakeUpload" table="cake_upload" catalog="cake_store">
+        <id name="idbookupload" type="java.lang.Integer">
+            <column name="idbookupload" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cakestore" class="Hibernate.Cakestore" fetch="select">
+            <column name="cakestore_idcakestore" not-null="true" />
+        </many-to-one>
+        <many-to-one name="userRegistration" class="Hibernate.UserRegistration" fetch="select">
+            <column name="uid" not-null="true" />
+        </many-to-one>
+        <property name="bname" type="string">
+            <column name="bname" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

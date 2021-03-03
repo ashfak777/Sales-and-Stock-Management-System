@@ -1,0 +1,64 @@
+.top-header {
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 5px 0;
+}
+.top-header .mainmenu ul li a {
+  line-height: 30px;
+}
+
+.top-header .mainmenu {
+  text-align: right;
+}
+.top-header .mainmenu ul li a {
+  color: #212121;
+}
+.container .mix {
+  display: none;
+}
+top-user {
+  padding-left: 0;
+}
+.top-user .user-name {
+  margin-top: 5px;
+}
+.top-user .user-name p {
+  margin-bottom: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #212121;
+  text-transform: uppercase;
+  padding-top: 2px;
+}
+.top-header .mainmenu {
+  text-align: right;
+}
+.top-header .mainmenu ul li a {
+  color: #212121;
+}
+.mainmenu {
+  text-align: right;
+}
+.mainmenu ul.menu-first-level {
+  padding: 0;
+  margin-top: 30px;
+}
+.mainmenu ul li {
+  display: inline-block;
+  position: relative;
+}
+.mainmenu ul li a {
+  color: #252525;
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 45px;
+  margin: 0;
+  padding: 0 19px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 300ms ease-in 0s;
+}

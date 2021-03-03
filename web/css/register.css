@@ -1,0 +1,49 @@
+.panel-register{
+    border-bottom-color:  #3399CC;
+    border-left: none;
+    border-right: none;
+}
+.panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+.panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.panel-head-register{
+    background-color: #3399CC;
+
+}
+
+.checkbox {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.panel-head-register{
+    background-color: #3399CC;
+
+}
+.panel-body {
+  padding: 15px;
+}
+.tablemy{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.tablemy tr td{
+    padding: 10px;
+}
+
+.tablemy2 tr td{
+    padding: 5px;
+   
+}

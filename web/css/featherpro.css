@@ -1,0 +1,13 @@
+.container .mix {
+  //display: none;
+  display: table-row;
+}
+.shop-title-store h1.section-title{
+    text-transform:uppercase;
+}
+.img-author .sub-title {
+  font-weight: 600;
+  font-style: normal;
+  color: #6f9a37;
+  text-transform: uppercase;
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 11, 2020 7:58:16 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.Cakestore" table="cakestore" catalog="cake_store">
+        <id name="idcakestore" type="java.lang.Integer">
+            <column name="idcakestore" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cake" class="Hibernate.Cake" fetch="select">
+            <column name="idcake" not-null="true" />
+        </many-to-one>
+        <property name="qty" type="java.lang.Integer">
+            <column name="qty" />
+        </property>
+        <property name="unitPrice" type="java.lang.Double">
+            <column name="unit_price" precision="22" scale="0" />
+        </property>
+        <set name="cakeUploads" table="cake_upload" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="cakestore_idcakestore" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.CakeUpload" />
+        </set>
+        <set name="invoiceItems" table="invoice_item" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idcakestore" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.InvoiceItem" />
+        </set>
+        <set name="cartItems" table="cart_item" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idcakestore" not-null="true" />
+            </key>
+            <one-to-many class="Hibernate.CartItem" />
+        </set>
+    </class>
+</hibernate-mapping>

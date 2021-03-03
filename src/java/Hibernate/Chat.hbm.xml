@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 11, 2020 7:58:16 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.Chat" table="chat" catalog="cake_store">
+        <id name="idchat" type="int">
+            <column name="idchat" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="userRegistrationByToUser" class="Hibernate.UserRegistration" fetch="select">
+            <column name="to_user" not-null="true" />
+        </many-to-one>
+        <many-to-one name="userRegistrationByFromUser" class="Hibernate.UserRegistration" fetch="select">
+            <column name="from_user" not-null="true" />
+        </many-to-one>
+        <property name="messages" type="string">
+            <column name="messages" length="250" />
+        </property>
+        <property name="date" type="date">
+            <column name="date" length="10" />
+        </property>
+        <property name="time" type="time">
+            <column name="time" length="8" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

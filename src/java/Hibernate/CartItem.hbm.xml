@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 11, 2020 7:58:16 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.CartItem" table="cart_item" catalog="cake_store">
+        <id name="idcardItem" type="java.lang.Integer">
+            <column name="idcard_item" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cakestore" class="Hibernate.Cakestore" fetch="select">
+            <column name="idcakestore" not-null="true" />
+        </many-to-one>
+        <many-to-one name="cart" class="Hibernate.Cart" fetch="select">
+            <column name="card_idcard" not-null="true" />
+        </many-to-one>
+        <property name="unitPrice" type="java.lang.Double">
+            <column name="unit_price" precision="22" scale="0" />
+        </property>
+        <property name="qty" type="java.lang.Integer">
+            <column name="qty" />
+        </property>
+        <property name="discount" type="java.lang.Double">
+            <column name="discount" precision="22" scale="0" />
+        </property>
+        <property name="total" type="java.lang.Double">
+            <column name="total" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

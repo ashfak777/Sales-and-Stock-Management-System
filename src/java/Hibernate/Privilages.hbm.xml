@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 11, 2020 7:58:16 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Hibernate.Privilages" table="privilages" catalog="cake_store">
+        <id name="pid" type="int">
+            <column name="pid" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="interfaces" class="Hibernate.Interfaces" fetch="select">
+            <column name="interfaces_idinterfaces" not-null="true" />
+        </many-to-one>
+        <many-to-one name="userType" class="Hibernate.UserType" fetch="select">
+            <column name="user_type_iduser_type" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
